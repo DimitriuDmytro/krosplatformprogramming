@@ -9,9 +9,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.runtime.collectAsState
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun App(viewModel: AboutViewModel = AboutViewModel()) {
+fun App(viewModel: AboutViewModel = koinViewModel()) {
     // Підписуємось на стан з ViewModel
     val platformName by viewModel.platformName.collectAsState()
     var showContent by remember { mutableStateOf(false) }

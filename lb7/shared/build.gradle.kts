@@ -17,12 +17,12 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     androidLibrary {
        namespace = "com.example.lb6.shared"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
-    
+
        compilerOptions {
            jvmTarget = JvmTarget.JVM_11
        }
@@ -48,6 +48,11 @@ kotlin {
             // Це ключові залежності для ViewModel та StateFlow
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            implementation("io.insert-koin:koin-core:3.5.6")
+            implementation("io.insert-koin:koin-compose:1.1.5")
+            implementation("io.insert-koin:koin-compose-viewmodel:1.1.5")
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
