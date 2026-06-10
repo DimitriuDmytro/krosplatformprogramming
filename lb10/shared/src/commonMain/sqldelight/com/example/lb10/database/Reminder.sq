@@ -1,0 +1,11 @@
+CREATE TABLE ReminderEntity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    description TEXT
+);
+
+getAllReminders:
+SELECT * FROM ReminderEntity;
+
+insertReminder:
+INSERT INTO ReminderEntity(title, description) VALUES (?, ?);
